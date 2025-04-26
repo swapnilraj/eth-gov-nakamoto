@@ -1,0 +1,18 @@
+# Matplotlib configuration file
+# This provides fallback options if standard fonts aren't available
+
+# Set the backend
+backend: Agg
+
+# Font options
+font.family: sans-serif
+font.sans-serif: Arial, Helvetica, Liberation Sans, DejaVu Sans, Bitstream Vera Sans, sans-serif
+
+# Allow font fallbacks
+svg.fonttype: none
+
+# Figure settings
+figure.figsize: 10, 6
+figure.dpi: 100
+figure.facecolor: white
+figure.autolayout: True 

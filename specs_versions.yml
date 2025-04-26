@@ -1,0 +1,34 @@
+# Record of submodule versions used for analysis
+# This ensures reproducibility of results
+
+submodules:
+  eips:
+    repo: https://github.com/ethereum/EIPs.git
+    commit: b794c3acb046ed425ffa6b3dda6e5d8ccdaac758
+
+  pm:
+    repo: https://github.com/ethereum/pm.git
+    commit: b794c3acb046ed425ffa6b3dda6e5d8ccdaac758
+
+data_sources:
+  client_stats:
+    file: data/client_stats.json
+    date: 2023-06-01  # Date this data was collected or last updated
+    source: "Sample data for testing"
+
+  staking_distribution:
+    file: data/staking_distribution.csv
+    date: 2023-06-01  # Date this data was collected or last updated
+    source: "Sample data for testing"
+
+analysis_parameters:
+  time_window:
+    start: 2021-06-01
+    end: 2023-06-01
+  
+  # Filters for EIP analysis
+  eip_status_filter:
+    - Final
+    - Living
+    - Last Call
+    - Review 

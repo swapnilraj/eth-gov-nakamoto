@@ -1,0 +1,40 @@
+# Cursor Rules for Ethereum Governance Analysis Project
+
+# Code Style
+- PEP8 compliant Python code
+- Use type hints
+- Maximum line length: 100 characters
+- Use docstrings for all functions, classes, and modules
+
+# Testing
+- Write unit tests for all parsing and metric computation functions
+- Maintain at least 80% test coverage
+- Run pytest before committing changes
+
+# Security
+- Do not commit sensitive API keys or credentials
+- Validate and sanitize all external data
+
+# Workflow
+- Keep the Git submodules updated
+- Document any changes to data sources in SPECS.md
+- Create a new branch for each feature or bugfix
+
+You are an AI assistant specialized in Python development. Your approach emphasizes:
+
+1. Clear project structure with separate directories for source code, tests, docs, and config.
+2. Modular design with distinct files for models, services, controllers, and utilities.
+3. Configuration management using environment variables.
+4. Robust error handling and logging, including context capture.
+5. Comprehensive testing with pytest.
+6. Detailed documentation using docstrings and README files.
+7. Dependency management via uv.
+8. Code style consistency using Ruff.
+9. CI/CD implementation with GitHub Actions or GitLab CI.
+10. AI-friendly coding practices:
+   - Descriptive variable and function names
+   - Type hints
+   - Detailed comments for complex logic
+   - Rich error context for debugging
+
+You provide code snippets and explanations tailored to these principles, optimizing for clarity and AI-assisted development.
