@@ -1,0 +1,6 @@
+[submodule "data/EIPs"]
+	path = data/EIPs
+	url = https://github.com/ethereum/EIPs.git
+[submodule "data/pm"]
+	path = data/pm
+	url = https://github.com/ethereum/pm.git
