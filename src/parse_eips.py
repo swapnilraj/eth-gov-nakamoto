@@ -6,9 +6,10 @@ EIP Parser - Extract author information from Ethereum Improvement Proposals
 import os
 import re
 import csv
+import json
 import argparse
 from pathlib import Path
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Tuple, Optional, Set
 from dataclasses import dataclass
 import yaml
 from bs4 import BeautifulSoup
@@ -85,22 +86,25 @@ def parse_eip_file(file_path: Path) -> Optional[EipMetadata]:
             github = None
             organization = None
             
-            # Extract email if present
-            email_match = re.search(r'<([^>]+)>', author_entry)
+            # Extract email if present (must contain a dot to distinguish from GitHub handles)
+            email_match = re.search(r'<([^>]*\.[^>]*)>', name)
             if email_match:
                 email = email_match.group(1)
                 name = name.replace(email_match.group(0), '').strip()
                 
             # Extract GitHub handle if present
-            github_match = re.search(r'@(\w+)', author_entry)
+            github_match = re.search(r'@([\w-]+)', name)
             if github_match:
                 github = github_match.group(1)
                 name = name.replace(github_match.group(0), '').strip()
                 
             # Extract organization if in parentheses
-            org_match = re.search(r'\(([^)]+)\)', author_entry)
+            org_match = re.search(r'\(([^)]*)\)', name)
             if org_match:
-                organization = org_match.group(1)
+                org_content = org_match.group(1)
+                # Only set organization if parentheses aren't empty
+                if org_content.strip():
+                    organization = org_content
                 name = name.replace(org_match.group(0), '').strip()
                 
             authors.append(EipAuthor(name=name, email=email, github=github, organization=organization))
@@ -119,34 +123,71 @@ def parse_eip_file(file_path: Path) -> Optional[EipMetadata]:
         return None
 
 
-def map_github_to_organization(github_handles: List[str]) -> Dict[str, str]:
+def load_organization_mapping(mapping_file: str) -> Dict[str, List[str]]:
     """
-    Map GitHub handles to organizations.
-    In a real implementation, this could use GitHub API or a prepared mapping.
+    Load organization mapping from JSON file and create case-insensitive mapping.
     
     Args:
-        github_handles: List of GitHub handles to map
+        mapping_file: Path to the organization mapping JSON file
         
     Returns:
-        Dictionary mapping GitHub handles to organization names
+        Dictionary mapping names to list of organizations (case-insensitive keys)
     """
-    # This is a placeholder - in a real implementation you would:
-    # 1. Use GitHub API to fetch organization info
-    # 2. Use a prepared CSV mapping
-    # 3. Use a combination of sources
-    # For now, we'll return an empty mapping
-    return {}
+    with open(mapping_file, 'r') as f:
+        mapping = json.load(f)
+    
+    # Create case-insensitive mapping
+    case_insensitive_mapping = {}
+    for key, orgs in mapping.items():
+        case_insensitive_mapping[key.lower()] = orgs
+    
+    return case_insensitive_mapping
 
 
-def process_eips_repository(repo_path: str, output_path: str) -> None:
+def get_organizations(author: EipAuthor, org_mapping: Dict[str, List[str]]) -> Set[str]:
+    """
+    Get organizations for an author based on name and GitHub handle.
+    
+    Args:
+        author: EipAuthor object
+        org_mapping: Organization mapping dictionary (case-insensitive keys)
+        
+    Returns:
+        Set of organizations
+    """
+    orgs = set()
+    
+    # Try to find by name (case-insensitive)
+    if author.name.lower() in org_mapping:
+        orgs.update(org_mapping[author.name.lower()])
+    
+    # Try to find by GitHub handle (case-insensitive)
+    if author.github and author.github.lower() in org_mapping:
+        orgs.update(org_mapping[author.github.lower()])
+    
+    # Add organization from EIP if present
+    if author.organization and len(orgs) == 0:
+        orgs.add(author.organization)
+    
+    if author.github and len(orgs) == 0:
+        orgs.add(author.github)
+        
+    return orgs
+
+
+def process_eips_repository(repo_path: str, output_path: str, org_mapping_file: str) -> None:
     """
     Process all EIPs in the repository and generate an authors CSV file.
     
     Args:
         repo_path: Path to the EIPs repository
         output_path: Path to save the output CSV file
+        org_mapping_file: Path to the organization mapping JSON file
     """
     eips_path = Path(repo_path)
+    
+    # Load organization mapping
+    org_mapping = load_organization_mapping(org_mapping_file)
     
     # Find all EIP markdown files
     eip_files = list(eips_path.glob('EIPS/eip-*.md'))
@@ -160,16 +201,6 @@ def process_eips_repository(repo_path: str, output_path: str) -> None:
     
     print(f"Successfully parsed {len(eip_metadata_list)} EIPs")
     
-    # Collect all GitHub handles
-    github_handles = []
-    for metadata in eip_metadata_list:
-        for author in metadata.authors:
-            if author.github:
-                github_handles.append(author.github)
-    
-    # Map GitHub handles to organizations
-    github_to_org = map_github_to_organization(github_handles)
-    
     # Prepare output directory
     output_dir = Path(output_path).parent
     os.makedirs(output_dir, exist_ok=True)
@@ -178,15 +209,13 @@ def process_eips_repository(repo_path: str, output_path: str) -> None:
     with open(output_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(['EIP', 'Title', 'Type', 'Category', 'Status', 'Created', 
-                         'Author Name', 'Author Email', 'Author GitHub', 'Organization'])
+                         'Author Name', 'Author Email', 'Author GitHub', 'Organizations'])
         
         for metadata in eip_metadata_list:
             for author in metadata.authors:
-                # If organization not specified in EIP, try to get it from GitHub mapping
-                organization = author.organization
-                if not organization and author.github and author.github in github_to_org:
-                    organization = github_to_org[author.github]
-                    
+                # Get organizations from mapping and EIP
+                organizations = get_organizations(author, org_mapping)
+                
                 writer.writerow([
                     metadata.eip_number,
                     metadata.title,
@@ -197,7 +226,7 @@ def process_eips_repository(repo_path: str, output_path: str) -> None:
                     author.name,
                     author.email or '',
                     author.github or '',
-                    organization or ''
+                    '; '.join(sorted(organizations)) if organizations else ''
                 ])
     
     print(f"EIP author data written to {output_path}")
@@ -208,9 +237,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description='Parse EIPs and extract author information')
     parser.add_argument('--source', required=True, help='Path to the EIPs repository')
     parser.add_argument('--output', default='output/authors.csv', help='Output CSV file path')
+    parser.add_argument('--org-mapping', required=True, help='Path to organization mapping JSON file')
     args = parser.parse_args()
     
-    process_eips_repository(args.source, args.output)
+    process_eips_repository(args.source, args.output, args.org_mapping)
 
 
 if __name__ == '__main__':

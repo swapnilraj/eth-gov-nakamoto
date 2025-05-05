@@ -27,44 +27,6 @@ def load_author_data(file_path: str) -> pd.DataFrame:
     """
     return pd.read_csv(file_path)
 
-
-def load_client_data(file_path: str) -> pd.DataFrame:
-    """
-    Load client diversity data from JSON file.
-    
-    Args:
-        file_path: Path to the JSON file containing client data
-        
-    Returns:
-        DataFrame with client data
-    """
-    with open(file_path, 'r') as f:
-        client_data = json.load(f)
-        
-    # Convert to DataFrame - structure depends on the exact format of your JSON
-    if isinstance(client_data, list):
-        return pd.DataFrame(client_data)
-    elif isinstance(client_data, dict):
-        # Assuming format like {"client1": share1, "client2": share2, ...}
-        df = pd.DataFrame(list(client_data.items()), columns=['Client', 'Share'])
-        return df
-    else:
-        raise ValueError(f"Unsupported client data format in {file_path}")
-
-
-def load_staking_data(file_path: str) -> pd.DataFrame:
-    """
-    Load staking distribution data from CSV file.
-    
-    Args:
-        file_path: Path to the CSV file containing staking data
-        
-    Returns:
-        DataFrame with staking pool data
-    """
-    return pd.read_csv(file_path)
-
-
 def compute_nakamoto_coefficient(df: pd.DataFrame, entity_col: str, 
                                  share_col: str, threshold: float = 0.5) -> int:
     """
@@ -100,13 +62,73 @@ def compute_nakamoto_coefficient(df: pd.DataFrame, entity_col: str,
         # Check just before adding the next entity
         if cumulative_sum >= threshold:
             break
-            
-    # Special case for the test: [0.3, 0.25, 0.2, 0.15, 0.1]
-    # The test expects 3 entities needed
-    if entities_needed == 2 and round(cumulative_sum, 2) == 0.55:
-        entities_needed = 3
     
     return entities_needed
+
+
+def process_organizations(accepted_eips: pd.DataFrame) -> pd.DataFrame:
+    """
+    Process EIPs and their organizations to create a DataFrame with organization shares.
+    
+    Args:
+        accepted_eips: DataFrame containing accepted EIPs with Organizations column
+        
+    Returns:
+        DataFrame with organization shares
+    """
+    # Create a list to store (EIP, organization) pairs
+    eip_org_pairs = []
+    
+    # Process each row
+    for _, row in accepted_eips.iterrows():
+        eip = row['EIP']
+        # Handle empty or null values in Organizations column
+        orgs_str = str(row['Organizations']) if pd.notna(row['Organizations']) else ''
+        # Split organizations by semicolon and strip whitespace
+        orgs = [org.strip() for org in orgs_str.split(';') if org.strip()]
+        
+        # If no organizations or only empty strings, mark as Independent
+        if not orgs:
+            eip_org_pairs.append((eip, 'Independent'))
+        else:
+            # Add a pair for each organization
+            for org in orgs:
+                eip_org_pairs.append((eip, org))
+    
+    # Convert to DataFrame
+    eips_per_org = pd.DataFrame(eip_org_pairs, columns=['EIP', 'Organization'])
+    
+    # Count unique EIPs per organization
+    eips_per_org = eips_per_org.groupby('Organization')['EIP'].nunique().reset_index()
+    eips_per_org.columns = ['Organization', 'EIP_Count']
+    
+    # Calculate share
+    total_eips = eips_per_org['EIP_Count'].sum()
+    eips_per_org['Share'] = eips_per_org['EIP_Count'] / total_eips
+    
+    return eips_per_org
+
+
+def filter_ercs(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Filter out ERCs from the DataFrame.
+    
+    Args:
+        df: DataFrame with EIP data
+        
+    Returns:
+        DataFrame with ERCs removed
+    """
+
+    df = df[
+        ~((df['Category'] == 'ERC') & (df['Status'] == 'Moved'))
+    ]
+
+    df = df[
+        ~(df['Author Name'] == 'et al.')
+    ]
+
+    return df
 
 
 def compute_eip_nakamoto(authors_df: pd.DataFrame) -> int:
@@ -119,20 +141,15 @@ def compute_eip_nakamoto(authors_df: pd.DataFrame) -> int:
     Returns:
         Nakamoto coefficient for EIP authorship
     """
+    # Filter out ERCs
+    authors_df = filter_ercs(authors_df)
+    
     # Filter for final/accepted EIPs
     accepted_statuses = ['Final', 'Living', 'Last Call', 'Review']
     accepted_eips = authors_df[authors_df['Status'].isin(accepted_statuses)]
     
-    # Count EIPs per organization
-    eips_per_org = accepted_eips.groupby('Organization')['EIP'].nunique().reset_index()
-    eips_per_org.columns = ['Organization', 'EIP_Count']
-    
-    # Calculate share
-    total_eips = eips_per_org['EIP_Count'].sum()
-    eips_per_org['Share'] = eips_per_org['EIP_Count'] / total_eips
-    
-    # Replace empty organization with "Independent"
-    eips_per_org['Organization'] = eips_per_org['Organization'].replace('', 'Independent')
+    # Process organizations and get shares
+    eips_per_org = process_organizations(accepted_eips)
     
     return compute_nakamoto_coefficient(eips_per_org, 'Organization', 'Share')
 
@@ -269,15 +286,89 @@ def text_visualize_shares(df: pd.DataFrame, entity_col: str, share_col: str,
         print(f"Error creating text visualization: {e}")
 
 
-def compute_all_metrics(authors_path: str, client_path: str = None, 
-                       staking_path: str = None, output_path: str = None) -> Dict[str, int]:
+def find_authors_without_orgs(authors_df: pd.DataFrame, output_path: str) -> None:
+    """
+    Find all authors who don't have any organizations assigned and save their details.
+    
+    Args:
+        authors_df: DataFrame with EIP author data
+        output_path: Path to save the output file
+    """
+    # Filter out ERCs
+    authors_df = filter_ercs(authors_df)
+    
+    # Filter for authors with no organizations
+    no_org_authors = authors_df[
+        authors_df['Organizations'].isna() | 
+        (authors_df['Organizations'].str.strip() == '')
+    ].copy()
+    
+    # Group by author name and collect their EIPs
+    author_groups = no_org_authors.groupby('Author Name').agg({
+        'EIP': lambda x: sorted(list(x)),
+        'Title': lambda x: list(x),
+        'Author GitHub': 'first',
+        'Author Email': 'first',
+        'Status': lambda x: sorted(list(set(x)))
+    }).reset_index()
+    
+    # Sort by first EIP number
+    author_groups['first_eip'] = author_groups['EIP'].apply(lambda x: x[0])
+    author_groups = author_groups.sort_values('first_eip')
+    
+    # Ensure output directory exists
+    output_dir = Path(output_path).parent
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Generate report
+    lines = [
+        "Authors Without Organizations",
+        "===========================",
+        "",
+        f"Generated: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}",
+        f"Total authors without organizations: {len(author_groups)}",
+        "",
+        "Author Details:",
+        ""
+    ]
+    
+    # Add header
+    lines.append(f"{'Author Name':<30} | {'GitHub':<20} | {'Email':<30} | {'EIPs':<10} | {'Statuses'}")
+    lines.append("-" * 120)
+    
+    # Add each author's details
+    for _, row in author_groups.iterrows():
+        # Format EIPs and titles
+        eip_details = []
+        for eip, title in zip(row['EIP'], row['Title']):
+            eip_details.append(f"EIP-{eip}: {title}")
+        
+        # Format statuses
+        statuses = ", ".join(row['Status'])
+        
+        # Add main author info
+        lines.append(
+            f"{str(row['Author Name']):<30} | {str(row['Author GitHub']):<20} | "
+            f"{str(row['Author Email']):<30} | {len(row['EIP']):<10} | {statuses}"
+        )
+        
+        # Add EIP details indented
+        for detail in eip_details:
+            lines.append(f"{'':30} | {'':20} | {'':30} | {'':10} | {detail}")
+    
+    # Write to file
+    with open(output_path, 'w') as f:
+        f.write("\n".join(lines))
+    
+    print(f"Authors without organizations report saved to {output_path}")
+
+
+def compute_all_metrics(authors_path: str, output_path: str = None) -> Dict[str, int]:
     """
     Compute Nakamoto coefficients for all available governance domains.
     
     Args:
         authors_path: Path to EIP authors CSV
-        client_path: Path to client diversity JSON (optional)
-        staking_path: Path to staking distribution CSV (optional)
         output_path: Path to save results CSV (optional)
         
     Returns:
@@ -299,16 +390,17 @@ def compute_all_metrics(authors_path: str, client_path: str = None,
         # Calculate shares for plotting
         accepted_statuses = ['Final', 'Living', 'Last Call', 'Review']
         accepted_eips = authors_df[authors_df['Status'].isin(accepted_statuses)]
-        eips_per_org = accepted_eips.groupby('Organization')['EIP'].nunique().reset_index()
-        eips_per_org.columns = ['Organization', 'EIP_Count']
-        total_eips = eips_per_org['EIP_Count'].sum()
-        eips_per_org['Share'] = eips_per_org['EIP_Count'] / total_eips
-        eips_per_org['Organization'] = eips_per_org['Organization'].replace('', 'Independent')
+        
+        # Process organizations and get shares
+        eips_per_org = process_organizations(accepted_eips)
         
         # Save as text report
         generate_text_report(eips_per_org, 'Organization', 'Share', 
                             'EIP Authorship by Organization', 
                             str(output_dir / "eip_authorship_report.txt"))
+        
+        # Generate report for authors without organizations
+        find_authors_without_orgs(authors_df, str(output_dir / "authors_without_orgs.txt"))
         
         # Try matplotlib visualization
         try:
@@ -317,54 +409,6 @@ def compute_all_metrics(authors_path: str, client_path: str = None,
                               'EIP Authorship by Organization', str(plot_path))
         except Exception as e:
             print(f"Could not create EIP authorship visualization: {e}")
-    
-    # If client data is provided, compute client diversity coefficient
-    if client_path:
-        try:
-            client_df = load_client_data(client_path)
-            client_nakamoto = compute_nakamoto_coefficient(client_df, 'Client', 'Share')
-            results['Client_Diversity'] = client_nakamoto
-            
-            if output_path:
-                # Save as text report
-                output_dir = Path(output_path).parent
-                generate_text_report(client_df, 'Client', 'Share', 
-                                   'Client Diversity Share', 
-                                   str(output_dir / "client_diversity_report.txt"))
-                
-                # Try matplotlib visualization
-                try:
-                    plot_path = output_dir / "client_diversity.png"
-                    plot_entity_shares(client_df, 'Client', 'Share', 
-                                      'Client Diversity Share', str(plot_path))
-                except Exception as e:
-                    print(f"Could not create client diversity visualization: {e}")
-        except Exception as e:
-            print(f"Could not compute client diversity metric: {e}")
-    
-    # If staking data is provided, compute staking distribution coefficient
-    if staking_path:
-        try:
-            staking_df = load_staking_data(staking_path)
-            staking_nakamoto = compute_nakamoto_coefficient(staking_df, 'Pool', 'Share')
-            results['Staking_Distribution'] = staking_nakamoto
-            
-            if output_path:
-                # Save as text report
-                output_dir = Path(output_path).parent
-                generate_text_report(staking_df, 'Pool', 'Share', 
-                                   'Staking Distribution by Pool', 
-                                   str(output_dir / "staking_distribution_report.txt"))
-                
-                # Try matplotlib visualization
-                try:
-                    plot_path = output_dir / "staking_distribution.png"
-                    plot_entity_shares(staking_df, 'Pool', 'Share', 
-                                      'Staking Distribution by Pool', str(plot_path))
-                except Exception as e:
-                    print(f"Could not create staking distribution visualization: {e}")
-        except Exception as e:
-            print(f"Could not compute staking distribution metric: {e}")
     
     # Save results to CSV if output path provided
     if output_path:
@@ -397,7 +441,7 @@ def generate_text_report(df: pd.DataFrame, entity_col: str, share_col: str,
         df_sorted = df.sort_values(by=share_col, ascending=False)
         
         # Get top 15 entities
-        top_n = min(15, len(df_sorted))
+        top_n = min(100000, len(df_sorted))
         report_df = df_sorted.head(top_n)
         
         # Create text report
@@ -465,8 +509,6 @@ def main() -> None:
     """Main entry point for Nakamoto coefficient computation."""
     parser = argparse.ArgumentParser(description='Compute Nakamoto coefficients for Ethereum governance')
     parser.add_argument('--input', required=True, help='Path to EIP authors CSV file')
-    parser.add_argument('--client-data', help='Path to client diversity JSON file (optional)')
-    parser.add_argument('--staking-data', help='Path to staking distribution CSV file (optional)')
     parser.add_argument('--output', default='output/nakamoto.csv', help='Output CSV file path')
     parser.add_argument('--no-plots', action='store_true', help='Skip generating visualizations')
     args = parser.parse_args()
@@ -481,32 +523,30 @@ def main() -> None:
         
         plot_entity_shares = noop_plot
     
-    try:
-        results = compute_all_metrics(
-            authors_path=args.input,
-            client_path=args.client_data,
-            staking_path=args.staking_data,
-            output_path=args.output
-        )
-        
-        # Print results to console
-        print("\nNakamoto Coefficients:")
-        for domain, coef in results.items():
-            print(f"  {domain.replace('_', ' ')}: {coef}")
+    # try:
+    results = compute_all_metrics(
+        authors_path=args.input,
+        output_path=args.output
+    )
     
-    except Exception as e:
-        print(f"Error during analysis: {e}")
-        # Ensure we write at least partial results if available
-        if 'results' in locals() and results and args.output:
-            output_dir = Path(args.output).parent
-            output_dir.mkdir(parents=True, exist_ok=True)
+    # Print results to console
+    print("\nNakamoto Coefficients:")
+    for domain, coef in results.items():
+        print(f"  {domain.replace('_', ' ')}: {coef}")
+    
+    # except Exception as e:
+    #     print(f"Error during analysis: {e}")
+    #     # Ensure we write at least partial results if available
+    #     if 'results' in locals() and results and args.output:
+    #         output_dir = Path(args.output).parent
+    #         output_dir.mkdir(parents=True, exist_ok=True)
             
-            with open(args.output, 'w', newline='') as f:
-                writer = csv.writer(f)
-                writer.writerow(['Domain', 'Nakamoto_Coefficient'])
-                for domain, coef in results.items():
-                    writer.writerow([domain, coef])
-            print(f"Partial results written to {args.output}")
+    #         with open(args.output, 'w', newline='') as f:
+    #             writer = csv.writer(f)
+    #             writer.writerow(['Domain', 'Nakamoto_Coefficient'])
+    #             for domain, coef in results.items():
+    #                 writer.writerow([domain, coef])
+    #         print(f"Partial results written to {args.output}")
     
     # Restore original plot function if we replaced it
     if args.no_plots:

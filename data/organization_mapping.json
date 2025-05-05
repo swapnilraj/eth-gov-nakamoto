@@ -1,0 +1,2352 @@
+{
+  "Danny Ryan": [
+    "Ethereum",
+    "Etherealize"
+  ],
+  "Vitalik Buterin": [
+    "Ethereum"
+  ],
+  "Alex Beregszaszi": [
+    "Ethereum",
+    "Cantina"
+  ],
+  "Gregory Markou": [
+    "Chainsafe"
+  ],
+  "P\u00e9ter Szil\u00e1gyi": [
+    "Ethereum"
+  ],
+  "Gary Rong": [
+    "Ethereum"
+  ],
+  "Tim Beiko": [
+    "Pantheon",
+    "Ethereum",
+    "PegaSys",
+    "ConsenSys"
+  ],
+  "Jared Wasinger": [
+    "Ethereum"
+  ],
+  "Rados\u0142aw Zag\u00f3rowicz": [],
+  "Pawe\u0142 Bylica": [
+    "Ethereum"
+  ],
+  "Adrian Sutton": [
+    "Optimism",
+    "ConsenSys"
+  ],
+  "Wei Tang": [
+    "Parity"
+  ],
+  "Nick Johnson": [
+    "ENS",
+    "Ethereum"
+  ],
+  "Abdelhamid Bakhta": [
+    "Starkware",
+    "ConsenSys"
+  ],
+  "Guillaume Ballet": [
+    "Ethereum"
+  ],
+  "Ignacio Hagopian": [
+    "Ethereum"
+  ],
+  "Gajinder Singh": [
+    "ChainSafe"
+  ],
+  "Ansgar Dietrichs": [
+    "Ethereum"
+  ],
+  "Gottfried Herold": [
+    "Ethereum"
+  ],
+  "Jamie Lokier": [
+  ],
+  "Tanishq Jasoria": [
+    "Nethermind"
+  ],
+  "Parithosh Jayanthi": [
+    "Ethereum"
+  ],
+  "Gabriel Rocheleau": [
+    "Ethereum"
+  ],
+  "Karim Taam": [
+    "ConsenSys"
+  ],
+  "Jean M. Cyr": [],
+  "Etan Kissling": [
+    "Nimbus"
+  ],
+  "Zahary Karadjov": [
+    "Status",
+    "Nimbus"
+  ],
+  "Casey Detrio": [
+    "Ethereum"
+  ],
+  "Pedro Gomes": [
+    "WalletConnect"
+  ],
+  "ligi": [
+    "Ethereum"
+  ],
+  "William Morriss": [],
+  "Tomasz Stanczak": [
+    "Nethermind"
+  ],
+  "Jochem Brouwer": [
+    "Ethereum"
+  ],
+  "Mikhail Kalinin": [
+    "Ethereum",
+    "Harmony"
+  ],
+  "Nick Savers": [],
+  "Alexey Akhunov": [
+    "TurboGeth",
+    "Erigon"
+  ],
+  "Moody Salem": [
+    "Ekubo",
+    "Uniswap"
+  ],
+  "Paul Bouchon": [],
+  "Erik Marks": [
+    "ConsenSys"
+  ],
+  "Joel Thorstensson": [],
+  "Kelly Olson": [
+    "Supranational"
+  ],
+  "Sean Gulley": [
+    "Intel"
+  ],
+  "Simon Peffers": [
+    "Supranational"
+  ],
+  "Justin Drake": [
+    "Ethereum"
+  ],
+  "Dankrad Feist": [
+    "Ethereum"
+  ],
+  "mike": [
+    "Ethereum"
+  ],
+  "Francesco": [
+    "Ethereum"
+  ],
+  "dapplion": [
+    "ChainSafe",
+    "Sigma Prime",
+    "Gnosis"
+  ],
+  "Mikhail": [],
+  "Aditya": [
+    "Offchain Labs",
+    "Ethereum"
+  ],
+  "Justin": [
+    "Ethereum"
+  ],
+  "lightclient": [
+    "Ethereum"
+  ],
+  "Felix Lange": [
+    "Ethereum"
+  ],
+  "Ricardo Guilherme Schmidt": [],
+  "Martin Swende": [
+    "Ethereum"
+  ],
+  "Martin Holst Swende": [
+    "Ethereum",
+    "Open Ethereum"
+  ],
+  "William Entriken": [],
+  "Matt Garnett": [
+    "Ethereum"
+  ],
+  "Uri Klarman": [
+    "Bloxroute"
+  ],
+  "Green": [],
+  "Tomasz Kajetan Stanczak": [
+    "Nethermind"
+  ],
+  "Eric Marti Haynes": [
+    "Nethermind"
+  ],
+  "Josh Klopfenstein": [
+    "Nethermind"
+  ],
+  "Abhimanyu Nag": [
+    "Nethermind"
+  ],
+  "Hsiao-Wei Wang": [
+    "Ethereum"
+  ],
+  "Christian Reitwiessner": [
+    "Ethereum"
+  ],
+  "Pandapip1": [],
+  "Micah Zoltu": [
+    "Serv.eth"
+  ],
+  "Michael Sproul": [
+    "Sigma Prime"
+  ],
+  "Sacha Saint-Leger": [
+    "Lido"
+  ],
+  "Ben Adams": [
+    "Nethermind"
+  ],
+  "Philippe Castonguay": [
+    "Sequence"
+  ],
+  "Ben Tinner": [],
+  "Kevaundray Wedderburn": [
+    "Aztec",
+    "Ethereum"
+  ],
+  "Piper Merriam": [
+    "Ethereum",
+    "Trinity",
+    "Harmony"
+  ],
+  "Danno Ferrin": [
+    "Pantheon",
+    "Ethereum",
+    "PegaSys",
+    "ConsenSys"
+  ],
+  "Alex Vlasov": [
+    "Aztec"
+  ],
+  "Greg Colvin": [
+    "Fellowship of Ethereum Magicians",
+    "EVM"
+  ],
+  "Brooklyn Zelenka": [
+    "SPADE"
+  ],
+  "Ikmyeong Na": [],
+  "Zainan Victor Zhou": [
+    "ENS"
+  ],
+  "Konrad Feldmeier": [
+    "Brainbot"
+  ],
+  "James Hancock": [
+    "EthSignals"
+  ],
+  "Eli Ben Sasson": [
+    "Starkware"
+  ],
+  "Tom Brand": [
+    "Starkware"
+  ],
+  "Louis Guthmann": [
+    "Starkware"
+  ],
+  "Avihu Levy": [
+    "Starkware"
+  ],
+  "Youssef El Housni": [
+    "ConsenSys"
+  ],
+  "Michael Connor": [
+    "Aztec"
+  ],
+  "Aurore Guillevic": [
+    "Inria"
+  ],
+  "hujw77": [
+    "Darwinia"
+  ],
+  "Shoham Chakraborty": [
+    "Erigon"
+  ],
+  "Alex Forshtat": [],
+  "Andrea Lanfranchi": [
+    "Erigon"
+  ],
+  "Michael Carter": [
+    "Bitsbetrippin",
+    "BitsBeTrippin"
+  ],
+  "IfDefElse": [],
+  "Afri Schoedon": [
+    "Parity"
+  ],
+  "Jack Peterson": [
+    "Ethereum"
+  ],
+  "Weijia Zhang": [
+    "Wanchain",
+    "Ethereum Enterprise Alliance"
+  ],
+  "Peter Robinson": [
+    "Immutable"
+  ],
+  "Diederik Loerakker": [
+    "Optimism"
+  ],
+  "George Kadianakis": [
+    "Ethereum"
+  ],
+  "Mofi Taiwo": [
+    "Optimism"
+  ],
+  "Peter Davies": [
+    "Ethereum"
+  ],
+  "Kosala Hemachandra": [
+    "MyEtherWallet"
+  ],
+  "Sina Mahmoodi": [
+    "Ethereum"
+  ],
+  "Hudson Jameson": [
+    "Ethereum",
+    "Polygon"
+  ],
+  "Sergio Demian Lerner": [
+    "IOV Labs",
+    "Rootstock"
+  ],
+  "Dan Finlay": [
+    "ConsenSys"
+  ],
+  "Ronan Sandford": [
+    "Autonomous Worlds"
+  ],
+  "Stanley Wu": [
+    "Ankr"
+  ],
+  "M\u00fccahit B\u00fcy\u00fcky\u0131lmaz": [
+    "Yartu"
+  ],
+  "Muhammed Emin Ayd\u0131n": [
+    "Ubeswap"
+  ],
+  "Qi Zhou": [
+    "Quarkchain",
+    "Ethestorage"
+  ],
+  "Query0x": [],
+  "David Levit Gurevich": [
+    "Starkware"
+  ],
+  "Benjamin Chodroff": [
+    "HSBC"
+  ],
+  "Jim McDonald": [],
+  "Charles Cooper": [
+    "Beacon Exchange"
+  ],
+  "James Prestwich": [
+    "Init4"
+  ],
+  "brockelmore": [
+    "Nascent Fund"
+  ],
+  "Brayton Goodall": [],
+  "Mihir Faujdar": [],
+  "Yamen Merhi": [
+    "Lukso",
+    "Quantstamp"
+  ],
+  "Patronum Labs": [
+    "Patronum-Labs"
+  ],
+  "Lion": [
+    "ChainSafe",
+    "Sigma Prime",
+    "Gnosis"
+  ],
+  "Richard Meissner": [
+    "Safe",
+    "Gnosis"
+  ],
+  "Bryant Eisenbach": [
+    "Yearn",
+    "Vyper"
+  ],
+  "Alex Stokes": [
+    "Sigma Prime",
+    "Ethereum",
+    "Ephemeral Labs"
+  ],
+  "Tjaden Hess": [
+    "Trail of Bits"
+  ],
+  "Matt Luongo": [
+    "Keep Network",
+    "Threshold"
+  ],
+  "Piotr Dyraga": [
+    "Keep Network",
+    "Threshold"
+  ],
+  "Sergio D. Lerner": [
+    "IOV Labs",
+    "Rootstock"
+  ],
+  "Sam Wilson": [
+    "Ethereum",
+    "Binarycake"
+  ],
+  "Francesco D`Amato": [
+    "Ethereum"
+  ],
+  "Toni Wahrst\u00e4tter": [
+    "Ethereum"
+  ],
+  "Esteban Mino": [
+    "ConsenSys",
+    "Rainbow Me"
+  ],
+  "Gavin John": [],
+  "Lily Johnson": [
+    "Astria"
+  ],
+  "Renan Rodrigues de Souza": [],
+  "James Kempton": [],
+  "Francisco Giordano": [
+    "Nomic Foundation",
+    "OpenZeppelin"
+  ],
+  "Andrei Maiboroda": [
+    "Ethereum",
+    "Ipsilon"
+  ],
+  "Alex Papageorgiou": [
+    "Omniscia"
+  ],
+  "Marius van der Wijden": [
+    "Ethereum"
+  ],
+  "Yoav Weiss": [
+    "Ethereum"
+  ],
+  "kdeme": [],
+  "Liyi Guo": [
+    "Scroll"
+  ],
+  "Dr. Christopher Gorman": [],
+  "Kaan Uzdogan": [
+    "Ethereum"
+  ],
+  "Marco Castignoli": [
+    "Argot Org",
+    "Ethereum"
+  ],
+  "Manuel Wedler": [
+    "Ethereum"
+  ],
+  "Dominic Letz": [
+    "Diode"
+  ],
+  "Santiago Palladino": [
+    "Aztec",
+    "OpenZeppelin"
+  ],
+  "Antonio Salazar Cardozo": [
+    "Keep Network",
+    "Thesis"
+  ],
+  "Zachary Williamson": [
+    "Aztec"
+  ],
+  "Isaac Ardis": [
+    "Core-geth"
+  ],
+  "Fan Torchz": [
+    "Thoughtworks"
+  ],
+  "Remco Bloemen": [
+    "World",
+    "0x"
+  ],
+  "Leonid Logvinov": [
+    "MakerDAO",
+    "vLayer"
+  ],
+  "Jacob Evans": [
+    "0xProject"
+  ],
+  "Gerhard Wagner": [],
+  "Ra\u00fal Kripalani": [
+    "Protocol Labs",
+    "Ethereum",
+    "Libp2p"
+  ],
+  "Kris Shinn": [
+    "ConsenSys"
+  ],
+  "Dmitry Khovratovich": [
+    "ABDK",
+    "Ethereum"
+  ],
+  "Pooja Ranjan": [
+    "Ethereum Cat Herders",
+    "EthCatHerders"
+  ],
+  "Pawel Bylica": [
+    "Ethereum",
+    "Aleth",
+    "Ipsilon"
+  ],
+  "Marius Van Der Wijden": [
+    "Ethereum"
+  ],
+  "Max Resnick": [
+    "SMG",
+    "Anza",
+    "ConsenSys"
+  ],
+  "Davide Crapis": [
+    "Ethereum",
+    "PinAI"
+  ],
+  "Pascal Caversaccio": [
+    "Alethena"
+  ],
+  "Mark Mackey": [
+    "Sigma Prime"
+  ],
+  "Carl Beekhuizen": [
+    "Ethereum"
+  ],
+  "Anders Elowsson": [
+    "Ethereum"
+  ],
+  "Lucas Saldanha": [
+    "ConsenSys"
+  ],
+  "Yan Zhu": [
+    "Brave"
+  ],
+  "Brian R. Bondy": [
+    "Brave"
+  ],
+  "Andrea  Brancaleoni": [
+    "Brave"
+  ],
+  "Kyle Den Hartog": [
+    "Brave"
+  ],
+  "Oleg Iakushkin": [
+    "Chainlink",
+    "Nethermind"
+  ],
+  "Vlad Gluhovsky": [],
+  "Sam Calder-Mason": [
+    "Ethereum"
+  ],
+  "Andrew Davis": [
+    "Ethereum"
+  ],
+  "Marcin Sobczak": [
+    "Nethermind"
+  ],
+  "Marek Moraczy\u0144ski": [
+    "Nethermind"
+  ],
+  "Marcos Maceo": [
+    "Nethermind"
+  ],
+  "Josh Rudolf": [
+    "Ethereum"
+  ],
+  "Justin Traglia": [
+    "Ethereum"
+  ],
+  "Fredrik Svantes": [
+    "Ethereum"
+  ],
+  "Thomas Jay Rush": [
+    "TrueBlocks"
+  ],
+  "Hugo De la cruz": [
+    "Ipsilon"
+  ],
+  "Maurelian": [
+    "ConsenSys",
+    "Optimism"
+  ],
+  "Shane Jonas": [
+    "ConsenSys",
+    "Open-RPC"
+  ],
+  "Zachary Belford": [
+    "Open-RPC"
+  ],
+  "Piotr Dobaczewski": [
+    "Ipsilon"
+  ],
+  "Francesco D'Amato": [
+    "Ethereum"
+  ],
+  "Barnab\u00e9 Monnot": [
+    "Ethereum"
+  ],
+  "Michael Neuder": [
+    "Ethereum"
+  ],
+  "Potuz": [
+    "Ethereum"
+  ],
+  "Terence Tsao": [
+    "Offchain Labs",
+    "Prysmatic Labs",
+    "Prysmatic"
+  ],
+  "Giulio Rebuffo": [
+    "Erigon"
+  ],
+  "Thomas Thiery": [
+    "Ethereum"
+  ],
+  "Julian Ma": [
+    "Ethereum"
+  ],
+  "Jacob Kaufmann": [
+    "Ethereum"
+  ],
+  "Jihoon Song": [],
+  "Tim Pechersky": [
+    "OpenZeppelin"
+  ],
+  "Jame": [],
+  "John Max Skaller": [
+    "Internode"
+  ],
+  "Baptiste Vauthey": [],
+  "Ahmad Bitar": [
+    "Nethermind"
+  ],
+  "Gary Schulte": [
+    "ConsenSys"
+  ],
+  "Paul Dworzanski": [
+    "Ethereum"
+  ],
+  "Wei Han Ng": [
+    "Nethermind"
+  ],
+  "Jordi Baylina": [
+    "Giveth",
+    "Dappnode",
+    "WHG",
+    "Polygon"
+  ],
+  "Eric Conner": [
+    "EthHub",
+    "Freysa"
+  ],
+  "Keyvan Kambakhsh": [
+    "Protocol Labs",
+    "Zeisha Network"
+  ],
+  "Hamid Bateni": [
+    "Nobitex Labs"
+  ],
+  "Amir Kahoori": [
+    "Nobitex Labs"
+  ],
+  "Nobitex Labs": [
+    "Nobitex Labs"
+  ],
+  "0xwormhole": [
+    "Wormhole"
+  ],
+  "Alexandre Belling": [
+    "ConsenSys"
+  ],
+  "Lightclient": [
+    "Ethereum"
+  ],
+  "Guy Goren": [
+    "Aptos",
+    "Protocol Labs"
+  ],
+  "Marc Harvey-Hill": [
+    "Nethermind"
+  ],
+  "John Adler": [
+    "Celestia",
+    "ConsenSys"
+  ],
+  "Cyrus Adkisson": [
+    "Etheria Feed"
+  ],
+  "Eirik Ulvers\u00f8y": [],
+  "Lin Oshitani": [
+    "Nethermind"
+  ],
+  "Josh Weintraub": [
+    "Chainlink"
+  ],
+  "Zak Cole": [
+    "Whiteblock"
+  ],
+  "Kevin Owocki": [
+    "Gitcoin"
+  ],
+  "Hadrien Croubois": [
+    "OpenZeppelin"
+  ],
+  "Loredana Cirstea": [],
+  "Edson Ayllon": [
+    "Ethereum Cat Herders",
+    "EthCatHerders"
+  ],
+  "Base Labs": [
+    "Base-Labs"
+  ],
+  "Weiji Guo": [
+    "Base-Labs"
+  ],
+  "trustfarm": [],
+  "Will Villanueva": [
+    "Ethereum"
+  ],
+  "Dror Tirosh": [
+    "Eth Infinitism"
+  ],
+  "Shahaf Nacson": [],
+  "Dev Bear": [
+    "Berachain"
+  ],
+  "Lukas Rosario": [
+    "Base"
+  ],
+  "Wilson Cusack": [
+    "Base"
+  ],
+  "Jake Moxey": [
+    "Ithaca"
+  ],
+  "Derek Rein": [
+    "Warpcast"
+  ],
+  "Borislav Itskov": [
+    "Ambire"
+  ],
+  "Joao Tavares": [
+    "ConsenSys"
+  ],
+  "Adam Fuller": [],
+  "Philip Liao": [
+    "Ox",
+    "megaphone_hq"
+  ],
+  "Zhiqiang Xu": [],
+  "Lane Rettig": [
+    "Ethereum",
+    "Spacemesh"
+  ],
+  "HexZorro": [],
+  "Mojtaba Tefagh": [],
+  "Felix J Lange": [
+    "Ethereum"
+  ],
+  "Vitalik": [
+    "Ethereum"
+  ],
+  "Terence": [
+    "Offchain Labs",
+    "Prysmatic Labs"
+  ],
+  "potuz": [
+    "Ethereum"
+  ],
+  "Manav": [
+    "Polygon"
+  ],
+  "Zsolt Felf\u00f6ldi": [
+    "Ethereum"
+  ],
+  "Tobias Oberstein": [
+    "Crossbar.io/XBR"
+  ],
+  "Radoslaw Zagorowicz": [
+    "Ipsilon"
+  ],
+  "Dustin": [],
+  "Martin Lundfall": [
+    "Ethereum"
+  ],
+  "1m1": [
+    "1m1"
+  ],
+  "Mike Neuder": [
+    "Ethereum"
+  ],
+  "Mallesh Pai": [
+    "ConsenSys",
+    "SMG"
+  ],
+  "Charlie Noyes": [
+    "Paradigm"
+  ],
+  "Dan Robinson": [
+    "Paradigm"
+  ],
+  "Michael D. Carter": [
+    "Bitsbetrippin"
+  ],
+  "danceratopz": [
+    "Ethereum"
+  ],
+  "Dan Phifer": [
+    "Musiconomi"
+  ],
+  "James Levy": [
+    "Taptrust"
+  ],
+  "Reuben Youngblom": [
+    "Taptrust"
+  ],
+  "Cayman": [
+    "ChainSafe"
+  ],
+  "Ben Kaufman": [
+    "Daostack"
+  ],
+  "Adam Levi": [
+    "Daostack"
+  ],
+  "James Ray": [
+    "Drops of Diamond"
+  ],
+  "SmeargleUsedFly": [],
+  "EOS Classic": [
+    "EOS Classic"
+  ],
+  "Justice Hudson": [
+    "Ethereum"
+  ],
+  "Alex Van de Sande": [
+    "Ethereum",
+    "Mist/Ethereum Wallet"
+  ],
+  "Carl Larson": [
+    "/r/ethtrader subreddit moderator, EIP-858 author"
+  ],
+  "Brian Venturo": [
+    "Atlantic Crypto"
+  ],
+  "Gavin Wood": [
+    "Parity"
+  ],
+  "Christoph Burgdorf": [
+    "py-evm",
+    "Ethereum"
+  ],
+  "Rick Dudley": [
+    "Vulcanize"
+  ],
+  "Matthew Slipper": [
+    "Kyokan"
+  ],
+  "Ian Norden": [
+    "Polymer DAO"
+  ],
+  "David Stanfill": [],
+  "Simon Jentzsch": [
+    "Slock It"
+  ],
+  "Christoph Jentzsch": [
+    "Slock It"
+  ],
+  "Yoichi Hirai": [],
+  "Chih-Cheng Liang": [
+    "Ethereum"
+  ],
+  "Jacques Wagener": [],
+  "Mudit Gupta": [
+    "Polygon"
+  ],
+  "Martin Becze": [
+    "Ethereum"
+  ],
+  "Harikrishnan Mulackal": [
+    "Cantina",
+    "Ethereum"
+  ],
+  "Nikolai Mushegian": [
+    "Nexusdev"
+  ],
+  "Richard Moore": [
+    "etherjs"
+  ],
+  "Glitch": [],
+  "Pierre Bertet": [],
+  "Darryl Yeo": [
+    "dydx",
+    "ritual"
+  ],
+  "Yaroslav Sergievsky": [
+    "Zerion"
+  ],
+  "Peter Grassberger": [],
+  "Victor Porton": [],
+  "Cody Burns": [],
+  "Herman Junge": [],
+  "M\u00e1rio Havel": [
+    "Ethereum"
+  ],
+  "pk910": [
+    "Ethereum"
+  ],
+  "R\u00e9my Roy": [
+    "EthStaker"
+  ],
+  "Holly Atkinson": [
+    "Animoca Brands"
+  ],
+  "Tereza Burianova": [],
+  "Anderson Wesley": [],
+  "Antonio Sanso": [
+    "Ethereum"
+  ],
+  "Joseph Stockermans": [],
+  "Anton Bukov": [
+    "1inch"
+  ],
+  "Mikhail Melnik": [
+    "1inch"
+  ],
+  "mineruniter969": [],
+  "Fabian Vogelsteller": [
+    "Lukso"
+  ],
+  "Ryan Ghods": [
+    "OpenSea"
+  ],
+  "Victor Maia": [
+    "Ethereum"
+  ],
+  "Marc Garreau": [
+    "Ethereum"
+  ],
+  "Joseph Chow": [
+    "Ethereum"
+  ],
+  "djrtwo": [
+    "Etherealize",
+    "Ethereum"
+  ],
+  "vbuterin": [
+    "Ethereum"
+  ],
+  "axic": [
+    "Ethereum"
+  ],
+  "GregTheGreek": [
+    "Chainsafe"
+  ],
+  "karalabe": [
+    "Ethereum"
+  ],
+  "rjl493456442": [
+    "Ethereum"
+  ],
+  "timbeiko": [
+    "Ethereum"
+  ],
+  "jwasinger": [],
+  "rodiazet": [
+    "Ipsilon"
+  ],
+  "chfast": [
+    "Ethereum",
+    "Ipsilon"
+  ],
+  "ajsutton": [
+    "ConsenSys",
+    "Optimism"
+  ],
+  "sorpaas": [
+    "Parity"
+  ],
+  "Arachnid": [
+    "Ethereum"
+  ],
+  "arachnid": [
+    "Ethereum"
+  ],
+  "abdelhamidbakhta": [
+    "ConsenSys",
+    "Starkware"
+  ],
+  "gballet": [
+    "Ethereum"
+  ],
+  "jsign": [
+    "Ethereum"
+  ],
+  "g11tech": [
+    "ChainSafe"
+  ],
+  "g11in": [],
+  "adietrichs": [
+    "Ethereum"
+  ],
+  "GottfriedHerold": [
+    "Ethereum"
+  ],
+  "jlokier": [],
+  "tanishqjasoria": [
+    "Nethermind"
+  ],
+  "parithosh": [
+    "Ethereum"
+  ],
+  "gabrocheleau": [
+    "Ethereum"
+  ],
+  "matkt": [
+    "ConsenSys"
+  ],
+  "jean-m-cyr": [
+  ],
+  "etan-status": [
+
+  ],
+  "zah": [],
+  "cdetrio": [],
+  "pedrouid": [
+    "WalletConnect"
+  ],
+  "wjmelements": [],
+  "tkstanczak": [
+    "Ethereum",
+    "Nethermind"
+  ],
+  "jochem": [
+    "Ethereum"
+  ],
+  "mkalinin": [
+    "ConsenSys"
+  ],
+  "nicksavers": [],
+  "AlexeyAkhunov": [],
+  "moodysalem": [
+    "Ekubo",
+    "Uniswap"
+  ],
+  "rekmarks": [
+    "ConsenSys"
+  ],
+  "oed": [],
+  "ineffectualproperty": [],
+  "sean-sn": [
+  ],
+  "simonatsn": [],
+  "justindrake": [
+    "Ethereum"
+  ],
+  "JustinDrake": [
+    "Ethereum"
+  ],
+  "dankrad": [
+    "Ethereum"
+  ],
+  "michaelneuder": [
+    "Ethereum"
+  ],
+  "fradamt": [
+    "Ethereum"
+  ],
+  "adiasg": [
+    "Ethereum",
+    "Offchain Labs"
+  ],
+  "fjl": [
+    "Ethereum"
+  ],
+  "3esmit": [],
+  "holiman": [
+    "Ethereum"
+  ],
+  "fulldecent": [],
+  "uriklarman": [
+    "Bloxroute"
+  ],
+  "greenlucid": [],
+  "ericmartihaynes": [
+    "Nethermind"
+  ],
+  "joshklop": [
+    "Nethermind"
+  ],
+  "AbhiMan1601": [
+    "Nethermind"
+  ],
+  "hwwhww": [
+    "Ethereum"
+  ],
+  "chriseth": [
+    "Ethereum"
+  ],
+  "micahzoltu": [
+    "Serv.eth"
+  ],
+  "MicahZoltu": [
+    "Serv.eth"
+  ],
+  "michaelsproul": [
+    "Sigma Prime"
+  ],
+  "sachayves": [
+    "Lido"
+  ],
+  "benaadams": [
+    "Nethermind"
+  ],
+  "PhABC": [
+    "Sequence"
+  ],
+  "Terra854": [],
+  "kevaundray": [
+    "Aztec",
+    "Ethereum"
+  ],
+  "pipermerriam": [
+    "Ethereum"
+  ],
+  "shemnon": [
+    "ConsenSys",
+    "Ethereum"
+  ],
+  "shamatar": [
+    "Aztec"
+  ],
+  "gcolvin": [],
+  "expede": [],
+  "naikmyeong": [],
+  "xinbenlv": [
+    "ENS"
+  ],
+  "MadeofTin": [
+    "EthSignals"
+  ],
+  "MadeOfTin": [
+    "EthSignals"
+  ],
+  "madeoftin": [
+    "EthSignals"
+  ],
+  "Elistark": [
+    "Starkware"
+  ],
+  "avihu28": [
+    "Starkware"
+  ],
+  "yelhousni": [
+    "ConsenSys"
+  ],
+  "iAmMichaelConnor": [
+    "Aztec"
+  ],
+  "shohamc1": [
+    "Erigon"
+  ],
+  "forshtat": [],
+  "AndreaLanfranchi": [
+    "Erigon"
+  ],
+  "bitsbetrippin": [
+    "Bitsbetrippin"
+  ],
+  "q9f": [
+    "Parity"
+  ],
+  "5chdn": [
+    "Parity"
+  ],
+  "weijia31415": [],
+  "drinkcoffee": [
+    "Immutable"
+  ],
+  "protolambda": [
+    "Optimism"
+  ],
+  "asn": [
+    "Ethereum"
+  ],
+  "Inphi": [
+    "Optimism"
+  ],
+  "petertdavies": [
+    "Ethereum"
+  ],
+  "kvhnuke": [
+    "MyEtherWallet"
+  ],
+  "s1na": [
+    "Ethereum"
+  ],
+  "SergioDemianLerner": [
+    "IOV Labs",
+    "Rootstock"
+  ],
+  "danfinlay": [
+    "ConsenSys"
+  ],
+  "wighawag": [
+    "Autonomous Worlds"
+  ],
+  "fruit37": [],
+  "anndro": [
+    "Yartu"
+  ],
+  "muhammedea": [
+    "Ubeswap"
+  ],
+  "qizhou": [
+    "Ethestorage",
+    "Quarkchain"
+  ],
+  "DavidLevitGurevich": [
+    "Starkware"
+  ],
+  "benjaminchodroff": [
+    "HSBC"
+  ],
+  "mcdee": [
+    "Attestant"
+  ],
+  "charles-cooper": [
+    "Beacon Exchange"
+  ],
+  "prestwich": [
+    "Init4"
+  ],
+  "Spore-Druid-Bray": [],
+  "uink45": [],
+  "YamenMerhi": [
+    "Lukso",
+    "Quantstamp"
+  ],
+  "Patronum-Labs": [
+    "Patronum-Labs"
+  ],
+  "rmeissner": [],
+  "fubuloubu": [
+    "Vyper",
+    "Yearn"
+  ],
+  "ralexstokes": [
+    "Ethereum"
+  ],
+  "mhluongo": [
+    "Keep Network",
+    "Threshold"
+  ],
+  "pdyraga": [
+    "Keep Network",
+    "Threshold"
+  ],
+  "SamWilsn": [
+    "Ethereum"
+  ],
+  "samwilsn": [
+    "Ethereum"
+  ],
+  "nerolation": [
+    "Ethereum"
+  ],
+  "estebanmino": [
+    "ConsenSys",
+    "Rainbow Me"
+  ],
+  "lilyjjo": [
+    "Astria"
+  ],
+  "RenanSouza2": [],
+  "JKincorperated": [],
+  "frangio": [
+    "Nomic Foundation",
+    "OpenZeppelin"
+  ],
+  "gumb0": [
+    "Ipsilon"
+  ],
+  "alex-ppg": [
+    "Omniscia"
+  ],
+  "MariusVanDerWijden": [
+    "Ethereum"
+  ],
+  "yoavw": [
+    "Ethereum"
+  ],
+  "colinlyguo": [
+    "Scroll"
+  ],
+  "chgormanMH": [],
+  "kuzdogan": [
+    "Ethereum"
+  ],
+  "marcocastignoli": [
+    "Argot Org",
+    "Ethereum"
+  ],
+  "manuelwedler": [
+    "Ethereum"
+  ],
+  "dominicletz": [
+    "Diode"
+  ],
+  "spalladino": [
+    "Aztec",
+    "OpenZeppelin"
+  ],
+  "shadowfiend": [
+    "Keep Network",
+    "Thesis"
+  ],
+  "zac-williamson": [
+    "Aztec"
+  ],
+  "whilei": [
+    "Core-geth"
+  ],
+  "tcz001": [
+    "Thoughtworks"
+  ],
+  "Recmo": [
+    "0x",
+    "World"
+  ],
+  "LogvinovLeon": [
+    "MakerDAO",
+    "vLayer"
+  ],
+  "dekz": [
+    "0xProject"
+  ],
+  "thec00n": [],
+  "raulk": [
+    "Ethereum"
+  ],
+  "kshinn": [
+    "ConsenSys"
+  ],
+  "khovratovich": [
+    "ABDK",
+    "Ethereum"
+  ],
+  "poojaranjan": [
+    "EthCatHerders"
+  ],
+  "MaxResnick": [
+    "Anza",
+    "ConsenSys",
+    "SMG"
+  ],
+  "dcrapis": [
+    "Ethereum",
+    "PinAI"
+  ],
+  "pcaversaccio": [
+    "Alethena"
+  ],
+  "ethDreamer": [
+    "Sigma Prime"
+  ],
+  "carlbeek": [
+    "Ethereum"
+  ],
+  "anderselowsson": [
+    "Ethereum"
+  ],
+  "lucassaldanha": [
+    "ConsenSys"
+  ],
+  "diracdeltas": [
+    "Brave"
+  ],
+  "bbondy": [
+    "Brave"
+  ],
+  "thypon": [
+    "Brave"
+  ],
+  "kdenhartog": [
+    "Brave"
+  ],
+  "OlegJakushkin": [
+    "Chainlink",
+    "Nethermind"
+  ],
+  "samcm": [
+    "Ethereum"
+  ],
+  "savid": [
+    "Ethereum"
+  ],
+  "marcindsobczak": [
+    "Nethermind"
+  ],
+  "MarekM25": [
+    "Nethermind"
+  ],
+  "stdevMac": [
+    "Nethermind"
+  ],
+  "jrudolf": [
+    "Ethereum"
+  ],
+  "jtraglia": [
+    "Ethereum"
+  ],
+  "fredriksvantes": [
+    "Ethereum"
+  ],
+  "tjayrush": [
+    "TrueBlocks"
+  ],
+  "hugo-dc": [
+    "Ipsilon"
+  ],
+  "shanejonas": [
+    "ConsenSys",
+    "Open-RPC"
+  ],
+  "belfordz": [
+    "Open-RPC"
+  ],
+  "pdobacz": [
+    "Ipsilon"
+  ],
+  "Giulio2002": [
+    "Erigon"
+  ],
+  "soispoke": [
+    "Ethereum"
+  ],
+  "peersky": [
+    "OpenZeppelin"
+  ],
+  "ZWJKFLC": [],
+  "thabaptiser": [
+    "Bitcog"
+  ],
+  "smartprogrammer93": [
+    "Nethermind"
+  ],
+  "garyschulte": [
+    "ConsenSys"
+  ],
+  "poemm": [],
+  "weiihann": [
+    "Nethermind"
+  ],
+  "jbaylina": [
+    "Polygon"
+  ],
+  "econoar": [],
+  "keyvank": [
+    "Protocol Labs",
+    "Zeisha Network"
+  ],
+  "irnb": [
+    "Nobitex Labs"
+  ],
+  "guy-goren": [
+    "Aptos",
+    "Protocol Labs"
+  ],
+  "Marchhill": [
+    "Nethermind"
+  ],
+  "adlerjohn": [
+    "Celestia",
+    "ConsenSys"
+  ],
+  "cyrusadkisson": [
+    "Etheria Feed"
+  ],
+  "EirikUlversoy": [],
+  "linoscope": [
+    "Nethermind"
+  ],
+  "jhweintraub": [
+    "Chainlink"
+  ],
+  "zscole": [],
+  "amxx": [
+    "OpenZeppelin"
+  ],
+  "Amxx": [
+    "OpenZeppelin"
+  ],
+  "loredanacirstea": [],
+  "edsonayllon": [
+    "Ethereum Cat Herders",
+    "EthereumCatHerders"
+  ],
+  "Base-Labs": [
+    "Base-Labs"
+  ],
+  "weiji-cryptonatty": [
+    "Base-Labs"
+  ],
+  "villanuevawill": [
+    "Ethereum"
+  ],
+  "drortirosh": [
+    "Eth Infinitism"
+  ],
+  "shahafn": [
+    "OpenGSN"
+  ],
+  "itsdevbear": [
+    "Berachain"
+  ],
+  "lukasrosario": [
+    "Base"
+  ],
+  "wilsoncusack": [
+    "Base"
+  ],
+  "jxom": [
+    "Ithaca"
+  ],
+  "arein": [
+    "Warpcast"
+  ],
+  "Oxbobby": [
+    "Ambire"
+  ],
+  "cryptotavares": [
+    "ConsenSys"
+  ],
+  "azf20": [],
+  "phil-ociraptor": [
+    "Ox",
+    "megaphone_hq"
+  ],
+  "zhiqiangxu": [],
+  "hexzorro": [],
+  "mtefagh": [],
+  "terencechain": [
+    "Offchain Labs"
+  ],
+  "manav2401": [
+    "Polygon"
+  ],
+  "zsfelfoldi": [
+    "Ethereum"
+  ],
+  "tersec": [],
+  "MrChico": [
+    "Ethereum"
+  ],
+  "1m1-github": [
+    "1m1"
+  ],
+  "Mmp610": [
+    "ConsenSys",
+    "SMG"
+  ],
+  "BitsBeTrippin": [
+    "Michael Carter",
+    "Bitsbetrippin"
+  ],
+  "wemeetagain": [
+    "ChainSafe"
+  ],
+  "jamesray1": [],
+  "eosclassicteam": [
+    "EOS Classic"
+  ],
+  "jchancehud": [
+    "Ethereum"
+  ],
+  "atlanticcrypto": [
+    "Atlantic Crypto"
+  ],
+  "gavofyork": [
+    "Parity"
+  ],
+  "cburgdorf": [
+    "Ethereum"
+  ],
+  "AFDudley": [
+    "Vulcanize"
+  ],
+  "mslipper": [],
+  "i-norden": [
+    "Polymer DAO"
+  ],
+  "ChihChengLiang": [],
+  "jacqueswww": [],
+  "maxsam4": [
+    "Polygon"
+  ],
+  "hrkrshnn": [
+    "Cantina",
+    "Ethereum"
+  ],
+  "ricmoo": [
+    "Etherjs"
+  ],
+  "glitch-txs": [],
+  "bpierre": [
+    "Aragon"
+  ],
+  "darrylyeo": [
+    "Dydx",
+    "Ritual"
+  ],
+  "everdimension": [
+    "Zerion"
+  ],
+  "PeterTheOne": [],
+  "vporton": [],
+  "hermanjunge": [],
+  "taxmeifyoucan": [
+    "Ethereum"
+  ],
+  "remyroy": [
+    "EthStaker"
+  ],
+  "atkinsonholly": [
+    "Animoca Brands"
+  ],
+  "T-ess": [],
+  "andywesley": [],
+  "asanso": [
+    "Ethereum"
+  ],
+  "jstoxrocky": [],
+  "k06a": [
+    "1inch"
+  ],
+  "ZumZoom": [
+    "1inch"
+  ],
+  "frozeman": [
+    "Lukso"
+  ],
+  "ryanio": [
+    "OpenSea"
+  ],
+  "MaiaVictor": [
+    "Ethereum"
+  ],
+  "wolovim": [
+    "Ethereum"
+  ],
+  "ethers": [
+    "Ethereum"
+  ],
+  "Protolambda": [
+    "Ethereum",
+    "Optimism"
+  ],
+  "Olegjakushkin": [
+    "Nethermind",
+    "Chainlink"
+  ],
+  "Carlbeek": [
+    "Ethereum"
+  ],
+  "Ivan M": [
+    "Prysm",
+    "Prysmatic"
+  ],
+  "Dankrad": [
+    "Ethereum"
+  ],
+  "Etan": [
+    "Nimbus"
+  ],
+  "Mike": [
+    "Ethereum"
+  ],
+  "Kevaundray": [
+    "Ethereum",
+    "Aztec"
+  ],
+  "Sean": [
+  ],
+  "Jannik Luhn": [
+    "Brainbot/Research"
+  ],
+  "Greg Markou": [
+    "ChainSafe"
+  ],
+  "Ameen Soleimani": [
+    "SpankChain",
+    "Spankchain"
+  ],
+  "Preston": [
+    "Prysmatic Labs",
+    "Offchain Labs"
+  ],
+  "Antoine Toulme": [
+    "ConsenSys"
+  ],
+  "Mike Goelzer": [
+    "Protocol Labs",
+    "libp2p"
+  ],
+  "Mamy Ratsimbazafy": [
+    "Nimbus",
+    "Status"
+  ],
+  "Nicholas Lin": [
+    "Ethereum",
+    "Hsiu-Ping"
+  ],
+  "Daniel Ellison": [
+    "ConsenSys",
+    "Pantheon",
+    "PegaSys"
+  ],
+  "Ivaylo Kirilov": [
+    "Web3 Labs"
+  ],
+  "Leo": [
+    "BSC"
+  ],
+  "Jonny Rhea": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "Ben Edgington": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "Luke Anderson": [
+    "Sigma Prime"
+  ],
+  "Patrick MacKay": [
+    "Runtime Verification"
+  ],
+  "Nicolas Gailly": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "Paul Hauner": [
+    "Sigma Prime"
+  ],
+  "Kevin Mai-Hsuan": [
+    "Ethereum",
+    "Chia"
+  ],
+  "Adrian Manning": [
+    "Sigma Prime"
+  ],
+  "Trenton Van Epps": [
+    "Ethereum Cat Herders"
+  ],
+  "Olivier Begassat": [
+    "ConsenSys"
+  ],
+  "Cem Ozer": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "Jarrad Hope": [
+    "Nimbus",
+    "Status"
+  ],
+  "Jacek Sieka": [
+    "Status",
+    "Nimbus"
+  ],
+  "Fredrick Harrysson": [
+    "Parity"
+  ],
+  "Mikhail Kalinan": [
+    "ConsenSys",
+    "Ethereum"
+  ],
+  "Steven Schroeder": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "Nishant Das": [
+    "Prysmatic"
+  ],
+  "Mikerah": [
+    "ChainSafe"
+  ],
+  "Matthew Elder": [
+    "Whiteblock"
+  ],
+  "Akhila Raju": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "Ra\u00fal Jordan": [
+    "Prysmatic Labs",
+    "Offchain Labs"
+  ],
+  "Anton Nashatyrev": [
+    "Harmony"
+  ],
+  "Dapplion": [
+    "ChainSafe",
+    "Sigma Prime",
+    "Gnosis"
+  ],
+  "PK910": [
+    "Ethereum"
+  ],
+  "Matt": [
+    "Ethereum"
+  ],
+  "Tim beiko": [
+    "Ethereum"
+  ],
+  "Fredrick Harryson": [
+    "Parity"
+  ],
+  "Afri": [
+    "Parity"
+  ],
+  "Prateek Reddy": [
+    "Ethereum"
+  ],
+  "Blazj Kolad": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "George": [
+    "Clearmatics"
+  ],
+  "Dmitry": [
+    "Harmony"
+  ],
+  "Kevin Chia": [
+    "Ethereum"
+  ],
+  "Justin Florentine": [
+    "Besu"
+  ],
+  "Trent": [
+    "Whiteblock"
+  ],
+  "Alex": [
+  ],
+  "Mark": [
+    "ethdreamer",
+    "ethDreamer"
+  ],
+  "Recordbot": [
+  ],
+  "Dan": [
+    "Danceratopz",
+    "danceratops",
+    "danceratopz"
+  ],
+  "Ben": [
+    "Sigma Prime"
+  ],
+  "Lang Rettig": [
+    "Ethereum"
+  ],
+  "Nicolas Liochon": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "Zak": [
+    "WhiteBlock"
+  ],
+  "Boris Petrov": [
+    "Status",
+    "Nimbus"
+  ],
+  "Chih Cheng Liang": [
+    "Ethereum"
+  ],
+  "Preston Van Loon": [
+    "Prysmatic Labs"
+  ],
+  "Pk910": [
+    "Ethereum"
+  ],
+  "Daniel Lehmer": [
+    "ConsenSys",
+    "Besu"
+  ],
+  "Dmitrii": [
+    "Ethereum",
+    "Harmony"
+  ],
+  "Raul Jordan": [
+    "Prysmatic Labs",
+    "Offchain Labs"
+  ],
+  "Joseph Delong": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "Diederik Loerakker/Protolambda": [
+    "Ethereum"
+  ],
+  "Fredrik Harrysson": [
+    "Parity"
+  ],
+  "Stanislaw Drozd": [
+    "Sigma Prime"
+  ],
+  "Peter Gallagher": [
+    "Meeting Notes"
+  ],
+  "Dean Eigenmann": [
+    "Yeeth",
+    "ENS",
+    "ZK Labs",
+    "Harbour Project"
+  ],
+  "terence": [
+    "Offchain Labs",
+    "Prysmatic Labs"
+  ],
+  "Ethdreamer": [
+    "Sigma Prime"
+  ],
+  "Greg Orbo": [
+    "Clearmatics"
+  ],
+  "Danceratopz": [
+    "Ethereum"
+  ],
+  "Tim Siwula": [
+    "ConsenSys"
+  ],
+  "Aidan Hyman": [
+    "ChainSafe"
+  ],
+  "George Ornbo": [
+    "Clearmatics"
+  ],
+  "Karl Floersch": [
+    "Ethereum"
+  ],
+  "Terrence": [
+    "Prysmatic"
+  ],
+  "Mamy": [
+    "Nimbus"
+  ],
+  "Ivan Martinez": [
+    "Prysmatic"
+  ],
+  "Carl": [
+    "Ethereum Foundation"
+  ],
+  "Enrico Del Fante": [
+    "tbenr"
+  ],
+  "Liam Horne": [
+    "L4"
+  ],
+  "Blaze": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "Zahoor": [
+    "Prysmatic Labs",
+    "Offchain Labs"
+  ],
+  "Nicholas": [
+    "Hsiu-Ping",
+    "Hsiu"
+  ],
+  "D": [
+    "computer"
+  ],
+  "dan": [
+    "danceratops",
+    "danceratopz"
+  ],
+  "mike neuder": [
+    "Ethereum"
+  ],
+  "Pooja ranjan": [
+    "Ethereum Cat Herders",
+    "EthereumCatHerders"
+  ],
+  "spencer": [
+    "Ethereum",
+    "Testing"
+  ],
+  "Rafael": [
+    "skylenet"
+  ],
+  "Gajinder": [
+    "ChainSafe"
+  ],
+  "Mehdi": [
+    "Sigma Prime"
+  ],
+  "Stan Drozd": [
+    "Sigma Prime"
+  ],
+  "Afri Schoeden": [
+    "Parity"
+  ],
+  "Francis": [
+    "Base"
+  ],
+  "Jochem": [
+    "Ethereum"
+  ],
+  "Daniel Lehrmer": [
+    "Besu"
+  ],
+  "Yutaro": [
+    "Prysmatic Labs",
+    "Offchain Labs"
+  ],
+  "Nishant": [
+    "Prysmatic Labs",
+    "Offchain Labs"
+  ],
+  "Mehdi Zerouali": [
+    "Sigma Prime"
+  ],
+  "Ithaca: Hsiao-Wei Wang": [
+    "Ethereum"
+  ],
+  "Tomasz S": [
+    "Nethermind"
+  ],
+  "Parithosh": [
+    "Ethereum"
+  ],
+  "Brett Robertson": [
+    "Ethereum Cat Herders",
+    "EthereumCatHerders"
+  ],
+  "Ivaylo": [
+    "Web3Labs"
+  ],
+  "Oliver": [
+    "Reth",
+    "Pardigm"
+  ],
+  "Matthew English": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "Mr. Def": [
+    "If-Def-Else/ProgPoW"
+  ],
+  "Eric Kellstrand": [
+    "ConsenSys",
+    "PegaSys",
+    "Pantheon"
+  ],
+  "Meredith Baxter": [
+    "ConsenSys",
+    "PegaSys",
+    "Pantheon"
+  ],
+  "Miss If": [
+    "If-Def-Else/ProgPoW"
+  ],
+  "Matthias": [
+    "CSec"
+  ],
+  "Dimitry Khokhlov": [
+    "Ethereum",
+    "ABDK"
+  ],
+  "Daniel Nagy": [
+    "Swarm"
+  ],
+  "Fredrik Harryson": [
+    "Parity"
+  ],
+  "Thibaut Sardan": [
+    "Parity"
+  ],
+  "Mikhail Kalanin": [
+    "Harmony",
+    "Ethereum"
+  ],
+  "Christian Reitwiessener": [
+    "Ethereum",
+    "Cantina"
+  ],
+  "Peter Szilagyi": [
+    "Ethereum"
+  ],
+  "Matt Halpern": [
+    "Pantheon",
+    "PegaSys",
+    "ConsenSys"
+  ],
+  "Eric Tang": [
+    "Livepeer streaming"
+  ],
+  "Vlad Zamfir": [
+    "Ethereum",
+    "SmartTxns"
+  ],
+  "Lefteris Karapetsas": [
+    "Brainbot",
+    "Raiden"
+  ],
+  "Jason Carver": [
+    "Ethereum",
+    "Trinity",
+    "Python"
+  ],
+  "Jutta Steiner": [
+    "Parity"
+  ],
+  "Kelly": [
+    "Supranational"
+  ],
+  "Shahan Khatchadourian": [
+    "PegaSys",
+    "ConsenSys",
+    "Pantheon"
+  ],
+  "Karalabe": [
+    "Ethereum"
+  ],
+  "Greg": [
+  ],
+  "Phil": [
+  ],
+  "Frederik Harrysson": [
+    "Parity"
+  ],
+  "Danno FErrin": [
+    "Ethereum",
+    "ConsenSys"
+  ],
+  "Yoavw": [
+    "Ethereum"
+  ],
+  "Joesph Delong": [
+    "ConsenSys",
+    "PegaSys"
+  ],
+  "Borris Mann": [
+    "Fellowship of Ethereum Magicians"
+  ],
+  "Martin Holst": [
+    "Ethereum"
+  ],
+  "Alexy": [
+    "@flcl42"
+  ],
+  "Alex B.": [
+    "Ethereum"
+  ],
+  "ansgar dietrichs": [
+    "Ethereum"
+  ],
+  "Marcin sobczak": [
+    "Nethermind"
+  ],
+  "Tomasz Stancsak": [
+    "Nethermind"
+  ],
+  "S1na": [
+    "Ethereum"
+  ],
+  "Holger Drewes": [
+    "Ethereum"
+  ],
+  "Charles St Louis": [
+    "EthereumCatHerders",
+    "Ethereum Cat Herders"
+  ],
+  "Dimitry Khoklov": [
+    "Ethereum"
+  ],
+  "David Murdoch": [
+    "Ethereum"
+  ],
+  "Andrew Gross": [
+    "Mana"
+  ],
+  "Ansgar dietrichs": [
+    "Ethereum"
+  ],
+  "Everett Hildenbrandt": [
+    "Runtime Verification"
+  ],
+  "Zixuan Zhang": [
+    "Ewasm"
+  ],
+  "Daniel Lehrner": [
+    "Besu",
+    "ConsenSys"
+  ],
+  "Somnath": [
+    "Erigon"
+  ],
+  "Ayman": [
+    "Nethermind"
+  ],
+  "Sudeep": [
+    "Erigon"
+  ],
+  "Paritosh": [
+    "Ethereum",
+    "Berlin"
+  ],
+  "Rai": [
+    "ConsenSys"
+  ],
+  "Gabriel": [
+    "EthJS"
+  ],
+  "Thomasz Stancsak": [
+    "Nethermind"
+  ],
+  "Frangio": [
+    "Nomic Foundation",
+    "OpenZeppelin"
+  ],
+  "Diederik Loerakker protolambda": [
+    "Optimism"
+  ],
+  "Eleazar Galano": [
+    "Infura"
+  ],
+  "Johnny Rhea": [
+    "ConsenSys"
+  ],
+  "RicMoo": [
+    "Ethersjs"
+  ],
+  "Chris Reitwiessner": [
+    "Cantina",
+    "Ethereum",
+    "Solidity"
+  ],
+  "Dragan Rakita": [
+    "Open Ethereum"
+  ],
+  "Rai Sur": [
+    "Besu"
+  ],
+  "Alexey": [
+    "@flcl42"
+  ],
+  "Neville:": [
+    "Dedaub"
+  ],
+  "P\u00c3\u00a9ter Szil\u00c3\u00a1gyi": [
+    "Ethereum"
+  ],
+  "DANNO Ferrin": [
+    "Ethereum",
+    "ConsenSys"
+  ],
+  "LightClient": [
+    "Ethereum"
+  ],
+  "Georgios Konstantopoulos": [
+    "Pardigm",
+    "Ithaca"
+  ],
+  "Gakonst": [
+    "Pardigm",
+    "Ithaca"
+  ],
+  "Dimitry": [
+    "tests"
+  ],
+  "Christian Reitweissner": [
+    "Ethereum",
+    "cpp-ethereum",
+    "Cantina"
+  ],
+  "James": [
+    "madeoftin"
+  ],
+  "6. Daniel Ellison": [
+    "ConsenSys"
+  ],
+  "Igor Barinov": [
+    "Mana"
+  ],
+  "Alex van de Sande": [
+    "Ethereum",
+    "mist"
+  ],
+  "Tim Coulter": [
+    "Metamask",
+    "ConsenSys"
+  ],
+  "Xin Xu": [
+    "Ethfans"
+  ],
+  "Jason Temple": [
+    "observer"
+  ],
+  "David Palm": [
+    "Parity"
+  ],
+  "EthDreamer": [
+    "Sigma Prime"
+  ],
+  "Rodiazet": [
+    "Ipsilon"
+  ],
+  "Jamie Pitts": [
+    "Fellowship of Ethereum Magicians",
+    "Ethereum"
+  ],
+  "Boris Mann": [
+    "Fellowship of Ethereum Magicians"
+  ],
+  "Jan Winklemann": [
+    "Least Authority"
+  ],
+  "Hind Kurhan": [
+    "Least Authority"
+  ],
+  "Ramakrishnan Muthukrishnan": [
+    "Least Authority"
+  ],
+  "Liz Steininger": [
+    "Least Authority"
+  ],
+  "Alex Bereg.": [
+    "Ethereum"
+  ],
+  "agyt": [
+    "?"
+  ],
+  "Ligi": [
+    "Ethereum"
+  ],
+  "Jon Choi": [
+    "Ethereum"
+  ],
+  "Frederik Harryson": [
+    "Parity"
+  ],
+  "Jake Lang": [
+    "Ethereum",
+    "Spearbit"
+  ],
+  "Axic": [
+    "Ethereum"
+  ]
+}

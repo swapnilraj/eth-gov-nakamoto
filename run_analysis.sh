@@ -36,16 +36,14 @@ sed -i '' "s|commit: # To be filled after running the analysis|commit: $EIPS_COM
 sed -i '' "s|commit: # To be filled after running the analysis|commit: $PM_COMMIT|g" specs_versions.yml
 
 echo "Running EIP analysis..."
-python src/parse_eips.py --source data/EIPs --output output/authors.csv
+python src/parse_eips.py --source data/EIPs --org-mapping data/organization_mapping.json --output output/authors.csv
 
 echo "Running core dev meeting analysis..."
 python src/parse_core_devs.py --source data/pm --output output/core_dev_attendance.csv
 
 echo "Computing Nakamoto coefficients..."
 python src/compute_nakamoto.py --input output/authors.csv \
-  --client-data data/client_stats.json \
-  --staking-data data/staking_distribution.csv \
-  --output output/nakamoto.csv $NO_PLOTS
+  --output output/nakamoto.csv
 
 echo "Analysis complete. Results available in the output directory."
 echo "Nakamoto coefficients:"
