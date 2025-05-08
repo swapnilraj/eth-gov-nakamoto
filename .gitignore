@@ -34,5 +34,3 @@ Thumbs.db
 
 # Local configuration
 .env 
-
-data/

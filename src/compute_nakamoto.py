@@ -69,6 +69,8 @@ def compute_nakamoto_coefficient(df: pd.DataFrame, entity_col: str,
 def process_organizations(accepted_eips: pd.DataFrame) -> pd.DataFrame:
     """
     Process EIPs and their organizations to create a DataFrame with organization shares.
+    Each organization is counted only once per EIP, regardless of how many authors from that
+    organization contributed to the EIP.
     
     Args:
         accepted_eips: DataFrame containing accepted EIPs with Organizations column
@@ -76,8 +78,8 @@ def process_organizations(accepted_eips: pd.DataFrame) -> pd.DataFrame:
     Returns:
         DataFrame with organization shares
     """
-    # Create a list to store (EIP, organization) pairs
-    eip_org_pairs = []
+    # Create a dictionary to store unique organizations per EIP
+    eip_orgs = {}
     
     # Process each row
     for _, row in accepted_eips.iterrows():
@@ -87,13 +89,22 @@ def process_organizations(accepted_eips: pd.DataFrame) -> pd.DataFrame:
         # Split organizations by semicolon and strip whitespace
         orgs = [org.strip() for org in orgs_str.split(';') if org.strip()]
         
+        # Initialize set for this EIP if not exists
+        if eip not in eip_orgs:
+            eip_orgs[eip] = set()
+            
         # If no organizations or only empty strings, mark as Independent
         if not orgs:
-            eip_org_pairs.append((eip, 'Independent'))
+            eip_orgs[eip].add(row['Author Name'])
         else:
-            # Add a pair for each organization
-            for org in orgs:
-                eip_org_pairs.append((eip, org))
+            # Add each organization to the set for this EIP
+            eip_orgs[eip].update(orgs)
+    
+    # Convert to list of (EIP, organization) pairs
+    eip_org_pairs = []
+    for eip, orgs in eip_orgs.items():
+        for org in orgs:
+            eip_org_pairs.append((eip, org))
     
     # Convert to DataFrame
     eips_per_org = pd.DataFrame(eip_org_pairs, columns=['EIP', 'Organization'])
@@ -144,12 +155,9 @@ def compute_eip_nakamoto(authors_df: pd.DataFrame) -> int:
     # Filter out ERCs
     authors_df = filter_ercs(authors_df)
     
-    # Filter for final/accepted EIPs
-    accepted_statuses = ['Final', 'Living', 'Last Call', 'Review']
-    accepted_eips = authors_df[authors_df['Status'].isin(accepted_statuses)]
-    
+    # # Not ERCs, not rejected
     # Process organizations and get shares
-    eips_per_org = process_organizations(accepted_eips)
+    eips_per_org = process_organizations(authors_df)
     
     return compute_nakamoto_coefficient(eips_per_org, 'Organization', 'Share')
 
@@ -387,12 +395,8 @@ def compute_all_metrics(authors_path: str, output_path: str = None) -> Dict[str,
         output_dir = Path(output_path).parent
         output_dir.mkdir(parents=True, exist_ok=True)
         
-        # Calculate shares for plotting
-        accepted_statuses = ['Final', 'Living', 'Last Call', 'Review']
-        accepted_eips = authors_df[authors_df['Status'].isin(accepted_statuses)]
-        
         # Process organizations and get shares
-        eips_per_org = process_organizations(accepted_eips)
+        eips_per_org = process_organizations(authors_df)
         
         # Save as text report
         generate_text_report(eips_per_org, 'Organization', 'Share', 
