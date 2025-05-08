@@ -1,14 +1,12 @@
 {
   "Danny Ryan": [
-    "Ethereum",
-    "Etherealize"
+    "Ethereum"
   ],
   "Vitalik Buterin": [
     "Ethereum"
   ],
   "Alex Beregszaszi": [
-    "Ethereum",
-    "Cantina"
+    "Ethereum"
   ],
   "Gregory Markou": [
     "Chainsafe"
@@ -878,14 +876,13 @@
     "Ethereum"
   ],
   "Harikrishnan Mulackal": [
-    "Cantina",
     "Ethereum"
   ],
   "Nikolai Mushegian": [
     "Nexusdev"
   ],
   "Richard Moore": [
-    "etherjs"
+    "Ethersjs"
   ],
   "Glitch": [],
   "Pierre Bertet": [],
@@ -941,7 +938,6 @@
     "Ethereum"
   ],
   "djrtwo": [
-    "Etherealize",
     "Ethereum"
   ],
   "vbuterin": [
@@ -1596,7 +1592,6 @@
     "Polygon"
   ],
   "hrkrshnn": [
-    "Cantina",
     "Ethereum"
   ],
   "ricmoo": [
@@ -2087,8 +2082,7 @@
     "Ethereum"
   ],
   "Christian Reitwiessener": [
-    "Ethereum",
-    "Cantina"
+    "Ethereum"
   ],
   "Peter Szilagyi": [
     "Ethereum"
@@ -2238,7 +2232,6 @@
     "Ethersjs"
   ],
   "Chris Reitwiessner": [
-    "Cantina",
     "Ethereum",
     "Solidity"
   ],
@@ -2277,8 +2270,7 @@
   ],
   "Christian Reitweissner": [
     "Ethereum",
-    "cpp-ethereum",
-    "Cantina"
+    "cpp-ethereum"
   ],
   "James": [
     "madeoftin"

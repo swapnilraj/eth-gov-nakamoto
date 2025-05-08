@@ -120,44 +120,66 @@ def process_organizations(accepted_eips: pd.DataFrame) -> pd.DataFrame:
     return eips_per_org
 
 
-def filter_ercs(df: pd.DataFrame) -> pd.DataFrame:
+def filter_eips(df: pd.DataFrame, status: str = None) -> pd.DataFrame:
     """
-    Filter out ERCs from the DataFrame.
+    Filter EIPs based on status and remove ERCs.
     
     Args:
         df: DataFrame with EIP data
+        status: Optional status to filter by (e.g. 'Final')
         
     Returns:
-        DataFrame with ERCs removed
+        Filtered DataFrame
     """
-
-    df = df[
+    # Start with base filter to remove ERCs
+    filtered_df = df[
         ~((df['Category'] == 'ERC') & (df['Status'] == 'Moved'))
     ]
+    
+    # Apply status filter if specified
+    if status:
+        filtered_df = filtered_df[filtered_df['Status'] == status]
+    
+    return filtered_df
 
-    df = df[
-        ~(df['Author Name'] == 'et al.')
-    ]
 
-    return df
-
-
-def compute_eip_nakamoto(authors_df: pd.DataFrame) -> int:
+def compute_eip_nakamoto(authors_df: pd.DataFrame, status: str = None) -> int:
     """
     Compute Nakamoto coefficient for EIP authors.
     
     Args:
         authors_df: DataFrame with EIP author data
+        status: Optional status to filter by (e.g. 'Final')
         
     Returns:
         Nakamoto coefficient for EIP authorship
     """
-    # Filter out ERCs
-    authors_df = filter_ercs(authors_df)
+    # Filter EIPs based on status
+    filtered_df = filter_eips(authors_df, status)
     
-    # # Not ERCs, not rejected
     # Process organizations and get shares
-    eips_per_org = process_organizations(authors_df)
+    eips_per_org = process_organizations(filtered_df)
+    
+    return compute_nakamoto_coefficient(eips_per_org, 'Organization', 'Share')
+
+
+def compute_accepted_eip_nakamoto(authors_df: pd.DataFrame) -> int:
+    """
+    Compute Nakamoto coefficient for accepted (Final) EIPs.
+    
+    Args:
+        authors_df: DataFrame with EIP author data
+        
+    Returns:
+        Nakamoto coefficient for accepted EIPs
+    """
+    # Filter for Final EIPs and remove ERCs
+    accepted_df = authors_df[
+        (authors_df['Status'] == 'Final')
+    ]
+    
+    # Process organizations and get shares
+    eips_per_org = process_organizations(accepted_df)
     
     return compute_nakamoto_coefficient(eips_per_org, 'Organization', 'Share')
 
@@ -303,7 +325,7 @@ def find_authors_without_orgs(authors_df: pd.DataFrame, output_path: str) -> Non
         output_path: Path to save the output file
     """
     # Filter out ERCs
-    authors_df = filter_ercs(authors_df)
+    authors_df = filter_eips(authors_df)
     
     # Filter for authors with no organizations
     no_org_authors = authors_df[
@@ -384,35 +406,59 @@ def compute_all_metrics(authors_path: str, output_path: str = None) -> Dict[str,
     """
     results = {}
     
-    # Load EIP author data and compute coefficient
+    # Load EIP author data
     authors_df = load_author_data(authors_path)
+    
+    # Compute coefficient for all EIPs
     eip_nakamoto = compute_eip_nakamoto(authors_df)
     results['EIP_Authorship'] = eip_nakamoto
     
-    # Create visualization for EIP authorship
+    # Compute coefficient for accepted EIPs
+    accepted_nakamoto = compute_eip_nakamoto(authors_df, status='Final')
+    results['Accepted_EIP_Authorship'] = accepted_nakamoto
+    
+    # Create visualizations if output path provided
     if output_path:
         # Ensure output directory exists
         output_dir = Path(output_path).parent
         output_dir.mkdir(parents=True, exist_ok=True)
         
-        # Process organizations and get shares
-        eips_per_org = process_organizations(authors_df)
+        # Process organizations and get shares for all EIPs
+        all_eips_df = filter_eips(authors_df)
+        eips_per_org = process_organizations(all_eips_df)
         
-        # Save as text report
+        # Save as text report for all EIPs
         generate_text_report(eips_per_org, 'Organization', 'Share', 
                             'EIP Authorship by Organization', 
                             str(output_dir / "eip_authorship_report.txt"))
         
+        # Process organizations for accepted EIPs
+        accepted_eips_df = filter_eips(authors_df, status='Final')
+        accepted_eips_per_org = process_organizations(accepted_eips_df)
+        
+        # Save as text report for accepted EIPs
+        generate_text_report(accepted_eips_per_org, 'Organization', 'Share',
+                            'Accepted EIP Authorship by Organization',
+                            str(output_dir / "accepted_eip_authorship_report.txt"))
+        
         # Generate report for authors without organizations
         find_authors_without_orgs(authors_df, str(output_dir / "authors_without_orgs.txt"))
         
-        # Try matplotlib visualization
+        # Try matplotlib visualization for all EIPs
         try:
             plot_path = output_dir / "eip_authorship.png"
             plot_entity_shares(eips_per_org, 'Organization', 'Share', 
                               'EIP Authorship by Organization', str(plot_path))
         except Exception as e:
             print(f"Could not create EIP authorship visualization: {e}")
+            
+        # Try matplotlib visualization for accepted EIPs
+        try:
+            plot_path = output_dir / "accepted_eip_authorship.png"
+            plot_entity_shares(accepted_eips_per_org, 'Organization', 'Share',
+                              'Accepted EIP Authorship by Organization', str(plot_path))
+        except Exception as e:
+            print(f"Could not create accepted EIP authorship visualization: {e}")
     
     # Save results to CSV if output path provided
     if output_path:

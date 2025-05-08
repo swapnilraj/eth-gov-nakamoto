@@ -237,7 +237,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description='Parse EIPs and extract author information')
     parser.add_argument('--source', required=True, help='Path to the EIPs repository')
     parser.add_argument('--output', default='output/authors.csv', help='Output CSV file path')
-    parser.add_argument('--org-mapping', required=True, help='Path to organization mapping JSON file')
+    parser.add_argument('--org-mapping', default='data/organization_mapping.json', help='Path to organization mapping JSON file')
     args = parser.parse_args()
     
     process_eips_repository(args.source, args.output, args.org_mapping)
